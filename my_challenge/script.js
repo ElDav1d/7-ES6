@@ -11,6 +11,14 @@ class Park extends TownElement {
         this.numberOfTrees = numberOfTrees;
         this.area = area;
     }
+
+    calculateAge() {
+        return new Date().getFullYear() - this.buildYear;
+    }
+
+    calculateTreeDensity() {
+        return this.numberOfTrees / this.area;
+    }
 }
 
 class Street extends TownElement {
