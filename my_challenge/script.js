@@ -6,18 +6,20 @@ class TownElement {
 }
 
 class Park extends TownElement {
-    constructor(name, buildYear, numberOfTrees, area) {
+    constructor(name, buildYear, numberOfTrees, area, age = 0, treeDensity = 0) {
         super(name, buildYear);
         this.numberOfTrees = numberOfTrees;
         this.area = area;
+        this.age = age;
+        this.treeDensity = treeDensity;
     }
 
     calculateAge() {
-        return new Date().getFullYear() - this.buildYear;
+        this.age = new Date().getFullYear() - this.buildYear;
     }
 
     calculateTreeDensity() {
-        return this.numberOfTrees / this.area;
+        this.treeDensity = this.numberOfTrees / this.area;
     }
 }
 
