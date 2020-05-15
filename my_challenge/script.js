@@ -103,3 +103,5 @@ streetSizings.set(8, 'normal');
 streetSizings.set(9, 'big');
 streetSizings.set(10, 'huge');
 
+const getRandomProperty = propertiesMap => propertiesMap.get(Math.floor(Math.random() * 10) + 1);
+
