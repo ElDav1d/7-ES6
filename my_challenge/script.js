@@ -181,6 +181,15 @@ const logTotalStreetsLength = streets => {
 
 }
 
+const logStreetAverageLength = streets => {
+    let result = 0;
+
+    streets.forEach(street => result += street.streetLength);
+
+    console.log(`The street average length is ${result / streets.length} meters`)
+}
+
 logTreeDensities(townParks);
 logParkAverageAge(townParks);
 logTotalStreetsLength(townStreets);
+logStreetAverageLength(townStreets)
