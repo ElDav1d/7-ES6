@@ -1,3 +1,24 @@
+// Parks have: name, buildYear, numberOfTrees, area, treeDensity (numberOfTrees/area), age(buildYear - currentDate), averageAge(sumOfParks/sumOfAges)
+// Street have: name, buildYear, length, size(tiny/small/normal(default)/big/huge), averageLength(sumOfLengths/sumOfStreets)
+
+/*
+REPORT INCLUDES
+1- Total number of elements and all names
+2- Number of each element and element's name
+3- Elements one by one loging name and properties
+4- Averages of each element (are out of classes )
+*/
+
+/*
+A-Create elements ramdomly from maps of names and properties
+    1-Create maps
+    2-Make random function to pass maps and set properties at new object
+    3-Make function create elements which deals with type of element, amount of elements, properties and methods
+B-Store elements
+
+C-Fix repeated properties 
+*/
+
 class TownElement {
     constructor(name, buildYear) {
         this.name = name;
@@ -126,3 +147,5 @@ const createTownElements = (amount, type) => {
     return elements;
 }
 
+const townParks = createTownElements(3, 'park');
+const townStreets = createTownElements(4, 'street');
