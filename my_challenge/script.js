@@ -19,7 +19,7 @@ class Park extends TownElement {
     }
 
     calculateTreeDensity() {
-        this.treeDensity = this.numberOfTrees / this.area;
+        this.treeDensity = parseFloat((this.numberOfTrees / this.area).toFixed(2));
     }
 }
 
