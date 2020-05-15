@@ -162,5 +162,15 @@ const logTreeDensities = parks => parks.forEach(park =>
     console.log(`The Tree Density of ${park.name} is ${park.treeDensity}`)
 );
 
+const logParkAverageAge = parks => {
+    let result = 0;
+
+    parks.forEach(park => result += park.age);
+
+    result = parseFloat((result / parks.length).toFixed(2));
+
+    console.log(`The average age of the park is ${result} years`)
+}
 
 logTreeDensities(townParks);
+logParkAverageAge(townParks);
