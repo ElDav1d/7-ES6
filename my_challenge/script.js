@@ -172,5 +172,15 @@ const logParkAverageAge = parks => {
     console.log(`The average age of the park is ${result} years`)
 }
 
+const logTotalStreetsLength = streets => {
+    let result = 0;
+
+    streets.forEach(street => result += street.streetLength);
+
+    console.log(`The total length of the streets is ${result} meters`)
+
+}
+
 logTreeDensities(townParks);
 logParkAverageAge(townParks);
+logTotalStreetsLength(townStreets);
