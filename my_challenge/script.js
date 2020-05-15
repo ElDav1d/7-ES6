@@ -158,4 +158,9 @@ const createTownElements = (amount, type) => {
 const townParks = createTownElements(3, 'park');
 const townStreets = createTownElements(4, 'street');
 
-townParks.forEach(park => console.log(`The Tree Density of ${park.name} is ${park.treeDensity}`));
+const logTreeDensities = parks => parks.forEach(park =>
+    console.log(`The Tree Density of ${park.name} is ${park.treeDensity}`)
+);
+
+
+logTreeDensities(townParks);
