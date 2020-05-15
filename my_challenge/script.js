@@ -105,3 +105,24 @@ streetSizings.set(10, 'huge');
 
 const getRandomProperty = propertiesMap => propertiesMap.get(Math.floor(Math.random() * 10) + 1);
 
+const createTownElements = (amount, type) => {
+    let elements = [];
+
+    for (let i = 0; i < amount; i++) {
+        let element;
+        if (type === 'park') {
+            element = new Park(getRandomProperty(parkNames), getRandomProperty(townElementYears), getRandomProperty(townElementNumbers), getRandomProperty(townElementBigNumbers));
+            element.calculateAge();
+            element.calculateTreeDensity();
+        }
+
+        if (type === 'street') {
+            element = new Street(getRandomProperty(streetNames), getRandomProperty(townElementYears), getRandomProperty(townElementBigNumbers), getRandomProperty(streetSizings));
+        }
+
+        elements.push(element);
+    }
+
+    return elements;
+}
+
