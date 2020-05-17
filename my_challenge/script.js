@@ -162,31 +162,27 @@ const logTreeDensities = parks => parks.forEach(park =>
     console.log(`The Tree Density of ${park.name} is ${park.treeDensity}`)
 );
 
-const logParkAverageAge = parks => {
+const propertySum = (townElements, elementKey) => {
+    //Althought reduce can do the job it didn't appear in any lecture yet
     let result = 0;
 
-    parks.forEach(park => result += park.age);
+    townElements.forEach(element => result += element[elementKey]);
 
-    result = parseFloat((result / parks.length).toFixed(2));
-
-    console.log(`The average age of the park is ${result} years`)
+    return result;
 }
 
-const logTotalStreetsLength = streets => {
-    let result = 0;
-
-    streets.forEach(street => result += street.streetLength);
-
-    console.log(`The total length of the streets is ${result} meters`)
-
+const logParkAverageAge = (parks, age) => {
+    const result = parseFloat(propertySum(parks, age) / parks.length).toFixed(2);
+    console.log(`The average age of the park is ${result} years`);
 }
 
-const logStreetAverageLength = streets => {
-    let result = 0;
+const logTotalStreetsLength = (streets, streetLength) => {
+    console.log(`The total length of the streets is ${propertySum(streets, streetLength)} meters`)
+}
 
-    streets.forEach(street => result += street.streetLength);
-
-    console.log(`The street average length is ${result / streets.length} meters`)
+const logStreetAverageLength = (streets, streetLength) => {
+    const result = parseFloat(propertySum(streets, streetLength) / streets.length).toFixed(2);
+    console.log(`The street average length is ${result} meters`)
 }
 
 const logStreetSizeClassifications = streets => {
@@ -196,7 +192,7 @@ const logStreetSizeClassifications = streets => {
 }
 
 logTreeDensities(townParks);
-logParkAverageAge(townParks);
-logTotalStreetsLength(townStreets);
-logStreetAverageLength(townStreets);
+logParkAverageAge(townParks, 'age');
+logTotalStreetsLength(townStreets, 'streetLength');
+logStreetAverageLength(townStreets, 'streetLength');
 logStreetSizeClassifications(townStreets);
