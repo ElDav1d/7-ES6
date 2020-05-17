@@ -171,9 +171,12 @@ const propertySum = (townElements, elementKey) => {
     return result;
 }
 
+const propertyAverage = (townElements, elementKey) => {
+    return parseFloat(propertySum(townElements, elementKey) / townElements.length).toFixed(2);
+}
+
 const logParkAverageAge = (parks, age) => {
-    const result = parseFloat(propertySum(parks, age) / parks.length).toFixed(2);
-    console.log(`The average age of the park is ${result} years`);
+    console.log(`The average age of the park is ${propertyAverage(parks, age)} years`);
 }
 
 const logTotalStreetsLength = (streets, streetLength) => {
@@ -181,8 +184,7 @@ const logTotalStreetsLength = (streets, streetLength) => {
 }
 
 const logStreetAverageLength = (streets, streetLength) => {
-    const result = parseFloat(propertySum(streets, streetLength) / streets.length).toFixed(2);
-    console.log(`The street average length is ${result} meters`)
+    console.log(`The street average length is ${propertyAverage(streets, streetLength)} meters`)
 }
 
 const logStreetSizeClassifications = streets => {
