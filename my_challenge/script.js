@@ -1,5 +1,5 @@
 /* TODO
-    1- Log park with more than 1000 trees 
+    1- MAP properties to use them as humanized strings (I.E at logHasMoreThan())
     2- Avoid random names repetition
     3- FIX average's floats (not properly rounded
 */
@@ -160,6 +160,14 @@ const propertyAverage = (townElements, elementKey) => {
     return parseFloat(propertySum(townElements, elementKey) / townElements.length).toFixed(2);
 }
 
+const logHasMoreThan = (townElements, elementKey, number) => {
+    townElements.forEach(element => {
+        if (element[elementKey] > number) {
+            console.log(`${element.name} has more than ${number} ${elementKey} (exactly ${element[elementKey]})`);
+        }
+    });
+}
+
 const logParkAverageAge = (parks, age) => {
     console.log(`The average age of the park is ${propertyAverage(parks, age)} years`);
 }
@@ -182,6 +190,7 @@ const init = () => {
     console.log(`--------------------------PARKS REPORT--------------------------`);
     logTreeDensities(townParks);
     logParkAverageAge(townParks, 'age');
+    logHasMoreThan(townParks, 'numberOfTrees', 1000);
     console.log(`-------------------------STREETS REPORT-------------------------`);
     logTotalStreetsLength(townStreets, 'streetLength');
     logStreetAverageLength(townStreets, 'streetLength');
