@@ -178,8 +178,14 @@ const logStreetSizeClassifications = streets => {
     );
 }
 
-logTreeDensities(townParks);
-logParkAverageAge(townParks, 'age');
-logTotalStreetsLength(townStreets, 'streetLength');
-logStreetAverageLength(townStreets, 'streetLength');
-logStreetSizeClassifications(townStreets);
+const init = () => {
+    console.log(`--------------------------PARKS REPORT--------------------------`);
+    logTreeDensities(townParks);
+    logParkAverageAge(townParks, 'age');
+    console.log(`-------------------------STREETS REPORT-------------------------`);
+    logTotalStreetsLength(townStreets, 'streetLength');
+    logStreetAverageLength(townStreets, 'streetLength');
+    logStreetSizeClassifications(townStreets);
+}
+
+init();
